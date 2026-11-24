@@ -1,0 +1,98 @@
+/* Markdown preview theme: GitHub's README look, with the Universe '26 banner grid behind screenshots. */
+@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400..700&display=swap");
+
+body {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 32px 72px;
+  background: #fff;
+  color: #1f2328;
+  font-family: "Mona Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 { color: #1f2328; font-weight: 600; letter-spacing: -0.01em; }
+h1 { font-size: 32px; line-height: 1.2; }
+h2 {
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 40px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d1d9e0;
+}
+h3 { font-size: 18px; }
+p, li { color: #1f2328; }
+strong, b { font-weight: 600; }
+
+a { color: #0969da; text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: #0550ae; }
+
+code {
+  font-family: "Monaspace Neon", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 85%;
+  background: rgba(129, 139, 152, 0.12);
+  color: #1f2328;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+}
+
+pre {
+  background: #f6f8fa !important;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+  padding: 16px 20px !important;
+  margin: 16px 0 24px;
+  overflow-x: auto;
+}
+pre code { padding: 0; background: none; font-size: 13.5px; line-height: 1.6; }
+
+/* Notes and tips: a quiet panel with a coloured label, like the "Open" pill in the banner. */
+blockquote, .markdown-alert {
+  margin: 20px 0;
+  padding: 12px 16px;
+  background: #f6f8fa;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+  color: #59636e;
+}
+blockquote > :first-child, .markdown-alert > :first-child { margin-top: 0; }
+blockquote > :last-child, .markdown-alert > :last-child { margin-bottom: 0; }
+blockquote pre, .markdown-alert pre { background: #fff !important; margin: 12px 0 0; }
+.markdown-alert-title { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; font-weight: 600; }
+.markdown-alert-title + p { margin-top: 0; }
+.markdown-alert-title svg { fill: currentColor; }
+.markdown-alert-note .markdown-alert-title { color: #0969da; }
+.markdown-alert-tip .markdown-alert-title { color: #1a7f37; }
+.markdown-alert-important .markdown-alert-title { color: #8250df; }
+.markdown-alert-warning .markdown-alert-title { color: #9a6700; }
+.markdown-alert-caution .markdown-alert-title { color: #d1242f; }
+
+img { max-width: 100%; }
+
+/* Screenshots sit on the same grid paper as the banner. */
+img[src$=".png"] {
+  box-sizing: border-box;
+  padding: 24px;
+  background-color: #f3f4f1;
+  background-image:
+    linear-gradient(#e3e5e0 1px, transparent 1px),
+    linear-gradient(90deg, #e3e5e0 1px, transparent 1px);
+  background-size: 24px 24px;
+  border: 1px solid #d1d9e0;
+  border-radius: 12px;
+}
+
+hr { border: 0; border-top: 1px solid #d1d9e0; }
+kbd {
+  font-family: inherit;
+  font-size: 13px;
+  border: 1px solid #d1d9e0;
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  padding: 1px 6px;
+}
+
+/* Bold first line of a blockquote is its callout title. */
+blockquote > p:first-child > strong:only-child { color: #0969da; }
+blockquote > p:first-child:has(> strong:only-child) { margin-bottom: 4px; }
